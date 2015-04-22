@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+    <title>Accounts management</title>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+</head>
+<body>
+
+    
+
+
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container navbar-header">
+            <a class="navbar-brand" id="text" style="color:black;" href="#"> <b>Accounts Management </b></a>
+        </div>
+        <div class="navbar-form navbar-left form-inline"  >
+         <%= user.email %> <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+           <% if (user.admin === true) { %>
+        <a href="/userList" class="btn btn-default btn-sm">userList</a>
+          <% } %>
+        </div>
+    </nav>
+
+
+
+
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+
+<!doctype html>
+<html>
+<head>
+    <title>Accounts management</title>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+</head>
+<body>
+
+    
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container navbar-header">
+            <a class="navbar-brand" id="text" style="color:black;" href="#"> <b>User List </b></a>
+        </div>
+        <div class="navbar-form navbar-left form-inline"  >
+            
+         <a href="/profile" class="btn btn-default btn-sm">back</a>
+        </div>
+    </nav>
+
+	<table style="width:100%" border="1">
+	<thead>
+	  <tr>
+	    <th>email</th>
+	    <th>admin</th>
+	    <th>id</th>
+	    <th>Add admin</th>
+	    <th>Delete</th>
+	    <th>upload</th>
+
+
+	  </tr>
+	 </thead>
+	 <tbody>
+	 <% for(var i=0; i < user.length; i++) { %>
+	  <tr>
+	    <td ><%= user[i].email %> </td>
+	    <td><%= user[i].admin %> </td>
+	    <td> <%= user[i].id %></td>
+	    <% if (user[i].admin === false) { %>
+         <td><a href="/<%= user[i].id %>/editadmin" class="btn btn-primary btn-sm" >add admin</a></td>
+        <% } else {%>
+        <td style="color:green;"> Admin </td>
+    	<% } %>
+	    <td> <a href="/<%= user[i].id %>/delete" class="btn btn-danger btn-sm">delete</a> </td>
+	    <td> <a href="/<%= user[i].id %>/<%= user[i].email %>/excel" class="btn btn-danger btn-sm">upload</a> </td>
+	  </tr>
+	  <% } %>
+
+	 </tbody>
+	</table>
+
+</div>
+</body>
+</html>
